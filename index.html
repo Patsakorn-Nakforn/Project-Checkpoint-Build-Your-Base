@@ -14,26 +14,115 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
-
     <!--NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container-fluid px-4">
+        <a class="navbar-brand" href="index.html"
+          ><h3><b>Portfolio Builder</b></h3></a
+        >
 
-        <a class="navbar-brand" href="index.html"><h3><b>Portfolio Builder</b></h2></a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="create-portfolio.html">Create Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="add-item.html">Add Item</a></li>
-                <li class="nav-item"><a class="nav-link" href="portfolio.html">View Portfolio</a></li>
-            </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="create-portfolio.html"
+                >Create Portfolio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="add-item.html">Add Item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">View Portfolio</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero py-5 text-center text-align-center">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-lg-6">
+            <h1 class="display-1 fw-bold">Build Your Portfolio</h1>
+            <p class="fs-4 text-secondary mt-4">
+              Create and showcase your achievements in one place.
+            </p>
+
+            <a
+              href="create-portfolio.html"
+              class="btn btn-primary btn-lg mt-4 me-3"
+            >
+              Create Portfolio
+            </a>
+
+            <a
+              href="portfolio.html"
+              class="btn btn-outline-primary btn-lg mt-4"
+            >
+              View Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="display-4 fw-bold">How It Works</h2>
+        <p class="fs-5 text-secondary mt-3">
+          Build your portfolio in 3 simple steps
+        </p>
+
+        <div class="row g-4 mt-4">
+          <!-- Step 1 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-4">
+              <div class="display-4 text-primary fw-bold">01</div>
+              <h3 class="fw-bold mt-3">Create Portfolio</h3>
+              <p class="text-secondary mb-0">
+                Create your personal portfolio and add your basic information.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-4">
+              <div class="display-4 text-primary fw-bold">02</div>
+              <h3 class="fw-bold mt-3">Add Items</h3>
+              <p class="text-secondary mb-0">
+                Add your projects, activities, and achievements.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-4">
+              <div class="display-4 text-primary fw-bold">03</div>
+              <h3 class="fw-bold mt-3">Attach Evidence</h3>
+              <p class="text-secondary mb-0">
+                Attach certificates, images, and supporting documents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="bg-dark text-light text-center py-3 mt-auto">
