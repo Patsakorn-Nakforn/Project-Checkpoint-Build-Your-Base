@@ -1,5 +1,5 @@
 ## วิธีเปิดเว็บ
-- ออนไลน์: https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/
+- ออนไลน์: [https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/portfolio.html]
 - ในเครื่อง: clone repo แล้วดับเบิลคลิก `index.html`
 
 ## โครงสร้างไฟล์
