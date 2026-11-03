@@ -22,6 +22,6 @@
 | M2 | นายกฤตภาส อ่องมี | หน้าแรก (index) + storage.js + Retrospective | 6909617562 |
 | M3 | นายประภวิษณุ์ ทิพย์อักษรเดชา| Create Portfolio + Live Preview | 6909617778 |
 | M4 | | Add Item (ข้อมูลผลงาน + add-item.js) + Sprint Plan |  |
-| M5 | | Add Item (Reflection + Evidence) + validation.js |  |
+| M5 | นายพรรษกร นักฟ้อน | Add Item (Reflection + Evidence) + validation.js | 6909686229 |
 | M6 | นายณัฐดนัย กลมกลาง| View Portfolio + render.js | 6909617620 |
-| M7 | | CSS / Responsive / QA + Checkpoint Tests |  |
+| M7 | นายเตชิต อยู่คุ้ม | CSS / Responsive / QA + Checkpoint Tests | 6909617687 |
