@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio home page</title>
+    <title>Add Item | Portfolio Builder</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -34,6 +34,89 @@
         </div>
       </div>
     </nav>
+
+    <!-- MAIN -->
+    <main class="container my-4 flex-grow-1">
+      <h1 class="h3 mb-4">เพิ่มผลงานใหม่</h1>
+
+      <div class="row g-4">
+
+        <!-- แบบฟอร์ม -->
+        <div class="col-lg-8">
+          <form id="item-form" novalidate>
+
+            <!-- ข้อมูลผลงาน -->
+            <fieldset class="mb-4">
+              <legend class="h5">1.ข้อมูลผลงาน</legend>
+
+              <div class="mb-3">
+                <label for="portfolio-select" class="form-label">เพิ่มให้ Portfolio</label>
+                <select id="portfolio-select" name="portfolioId" class="form-select" required>
+                  <option value="">-- เลือก Portfolio --</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="title" class="form-label">ชื่อผลงาน</label>
+                <input type="text" id="title" name="title" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label for="type" class="form-label">ประเภท</label>
+                <select id="type" name="type" class="form-select" required>
+                  <option value="">-- เลือกประเภท --</option>
+                  <option>Course Assignment</option>
+                  <option>Project</option>
+                  <option>Activity</option>
+                  <option>Competition</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="date" class="form-label">วันที่</label>
+                <input type="date" id="date" name="date" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label for="role" class="form-label">บทบาท</label>
+                <input type="text" id="role" name="role" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label for="description" class="form-label">รายละเอียด</label>
+                <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="skills" class="form-label">ทักษะ</label>
+                <input type="text" id="skills" name="skills" class="form-control"
+                       placeholder="เช่น HTML, CSS, JavaScript" required />
+                <div class="form-text">คั่นแต่ละทักษะด้วยเครื่องหมาย(,)</div>
+              </div>
+            </fieldset>
+
+            <!-- ส่วนที่ 2และ3 Reflection , Evidence: M5 ฝากทำต่อหน่อยนะ (#9,#10) -->
+            
+            <button type="submit" class="btn btn-primary">บันทึกผลงาน</button>
+          </form>
+        </div>
+
+        <!-- กล่องเคล็ดลับ -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="h6">เคล็ดลับ</h2>
+              <ul class="mb-0 small">
+                <li>ตั้งชื่อผลงานให้สั้นและชัดเจน</li>
+                <li>เขียน Role ให้ตรงกับสิ่งที่ทำจริง</li>
+                <li>Skills ใส่ได้หลายรายการ คั่นด้วย (,)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- FOOTER -->
     <footer class="bg-dark text-light text-center py-3 mt-auto">
