@@ -42,7 +42,7 @@
       <div class="row g-4">
 
         <!-- แบบฟอร์ม -->
-        <div class="col-lg-8">
+        <div class="col-lg-8 col-md-6">
           <form id="item-form" novalidate>
 
             <!-- ข้อมูลผลงาน -->
@@ -94,16 +94,40 @@
                        placeholder="เช่น HTML, CSS, JavaScript" required />
                 <div class="form-text">คั่นแต่ละทักษะด้วยเครื่องหมาย(,)</div>
               </div>
+
             </fieldset>
 
-            <!-- ส่วนที่ 2และ3 Reflection , Evidence: M5 ฝากทำต่อหน่อยนะ (#9,#10) -->
+            <!-- สิ่งที่ได้รับ (Reflection) -->
+            <fieldset class="mb-4">
+              <legend class="h5 mb-3">2.สิ่งที่ได้รับ (Reflection)</legend>
+
+              <div class="mb-3">
+                <label for="whatIDid" class="form-label">สิ่งที่ทำ (What I did)</label>
+                <textarea id="description" name="whatIDid" class="form-control" rows="3" required></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="whatILearned" class="form-label">สิ่งที่ได้เรียนรู้ (What I learn)</label>
+                <textarea id="description" name="whatILearned" class="form-control" rows="3" required></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="challenge" class="form-label">ความท้าทาย (Challenge)</label>
+                <textarea id="description" name="challenge" class="form-control" rows="3" required></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="nextStep" class="form-label">สิ่งที่จะทำในอนาคต (Next Step)</label>
+                <textarea id="description" name="nextStep" class="form-control" rows="3" required></textarea>
+              </div>
+            </fieldset>
             
             <button type="submit" class="btn btn-primary">บันทึกผลงาน</button>
           </form>
         </div>
 
         <!-- กล่องเคล็ดลับ -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-6">
           <div class="card">
             <div class="card-body">
               <h2 class="h6">เคล็ดลับ</h2>
