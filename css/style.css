@@ -1,3 +1,5 @@
+
+/* ---------- Theme variables ---------- */
 :root {
   --brand: #4f46e5;
   --brand-dark: #3730a3;
@@ -50,7 +52,7 @@ main {
   min-height: 60vh;
 }
 
-/* ----------  Navbar / Footer ---------- */
+/* ---------- Navbar / Footer ---------- */
 .navbar .nav-link {
   border-radius: 0.5rem;
   padding: 0.5rem 0.9rem;
@@ -135,6 +137,7 @@ footer {
   max-width: 720px;
   margin: 1.5rem auto;
 }
+
 .form-wrap {
   max-width: 720px;
 }
@@ -163,7 +166,6 @@ footer {
   margin-bottom: 0;
 }
 
-/* ส่วนหัว Portfolio + avatar */
 .avatar {
   width: 72px;
   height: 72px;
@@ -393,7 +395,12 @@ legend {
   .form-actions .btn,
   .hero .btn {
     width: 100%;
+    margin-right: 0 !important;
     margin-bottom: 0.5rem;
+  }
+
+  .hero .btn + .btn {
+    margin-top: 0.5rem !important;
   }
 
   .form-control,
