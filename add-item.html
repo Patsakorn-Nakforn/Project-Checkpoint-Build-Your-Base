@@ -8,7 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="js/storage.js"></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/validation.js" defer></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -45,20 +46,23 @@
       <div class="col-lg-8 col-md-6">
         <form id="item-form" class="needs-validation" novalidate>
 
+          
           <!-- ข้อมูลผลงาน -->
           <fieldset class="mb-4">
             <legend class="h5">1.ข้อมูลผลงาน</legend>
 
             <div class="mb-3">
               <label for="portfolio-select" class="form-label">เพิ่มให้ Portfolio</label>
-              <select id="portfolio-select" name="portfolioId" class="form-select" required>
+              <select id="portfolio-select" name="portfolioId" class="form-select" maxlength="10" required>
                 <option value="">-- เลือก Portfolio --</option>
               </select>
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="title" class="form-label">ชื่อผลงาน</label>
               <input type="text" id="title" name="title" class="form-control" required />
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
@@ -71,21 +75,25 @@
                 <option>Competition</option>
                 <option>Other</option>
               </select>
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="date" class="form-label">วันที่</label>
               <input type="date" id="date" name="date" class="form-control" required />
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="role" class="form-label">บทบาท</label>
               <input type="text" id="role" name="role" class="form-control" required />
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="description" class="form-label">รายละเอียด</label>
               <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
@@ -93,6 +101,7 @@
               <input type="text" id="skills" name="skills" class="form-control" placeholder="เช่น HTML, CSS, JavaScript"
                 required />
               <div class="form-text">คั่นแต่ละทักษะด้วยเครื่องหมาย(,)</div>
+              <div class="field-error text-danger small"></div>
             </div>
 
           </fieldset>
@@ -104,21 +113,25 @@
             <div class="mb-3">
               <label for="whatIDid" class="form-label">สิ่งที่ทำ (What I did)</label>
               <textarea id="whatIDid" name="whatIDid" class="form-control" rows="3" required></textarea>
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="whatILearned" class="form-label">สิ่งที่ได้เรียนรู้ (What I learn)</label>
               <textarea id="whatILearned" name="whatILearned" class="form-control" rows="3" required></textarea>
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="challenge" class="form-label">ความท้าทาย (Challenge)</label>
               <textarea id="challenge" name="challenge" class="form-control" rows="3" required></textarea>
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="nextStep" class="form-label">สิ่งที่จะทำในอนาคต (Next Step)</label>
               <textarea id="nextStep" name="nextStep" class="form-control" rows="3" required></textarea>
+              <div class="field-error text-danger small"></div>
             </div>
           </fieldset>
 
@@ -128,29 +141,22 @@
 
             <div class="mb-3">
               <label for="evidence1" class="form-label">หลักฐานของผลงานชิ้นที่ 1</label>
-              <input type="url" id="evidence1" name="evidence1" class="form-control"
-                placeholder="https://example.com" pattern="https://.+" required />
-              <div class="invalid-feedback">
-                กรุณากรอก URL ที่ถูกต้องและเริ่มต้นด้วย https:// เท่านั้น
-              </div>
+              <input type="url" id="evidence1" name="evidence1" class="form-control" placeholder="https://example.com"/>
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="evidence2" class="form-label">หลักฐานของผลงานชิ้นที่ 2</label>
               <input type="url" id="evidence2" name="evidence2" class="form-control"
-                placeholder="https://example.com" pattern="https://.+" />
-              <div class="invalid-feedback">
-                กรุณากรอก URL ที่ถูกต้องและเริ่มต้นด้วย https:// เท่านั้น
-              </div>
+                placeholder="https://example.com" />
+              <div class="field-error text-danger small"></div>
             </div>
 
             <div class="mb-3">
               <label for="evidence3" class="form-label">หลักฐานของผลงานชิ้นที่ 3</label>
-              <input type="url" 	id="evidence3" name="evidence3" class="form-control"
-                placeholder="https://example.com" pattern="https://.+" />
-              <div class="invalid-feedback">
-                กรุณากรอก URL ที่ถูกต้องและเริ่มต้นด้วย https:// เท่านั้น
-              </div>
+              <input type="url" id="evidence3" name="evidence3" class="form-control"
+                placeholder="https://example.com" />
+              <div class="field-error text-danger small"></div>
             </div>
 
           </fieldset>
@@ -180,26 +186,17 @@
     <small>&copy; 2026 Portfolio Builder | CS100 group 20</small>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+  <!-- script -->
   <script>
-    (() => {
-      'use strict'
+    const form = document.querySelector('#item-form');
 
-      const forms = document.querySelectorAll('.needs-validation')
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
+        if (validateItem(this)) {
+            alert('ข้อมูลถูกต้อง พร้อมบันทึกผลงาน');
+        }
+    });
   </script>
 </body>
 
