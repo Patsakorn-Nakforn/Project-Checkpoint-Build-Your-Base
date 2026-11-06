@@ -59,8 +59,10 @@
           name or a pseudonym is fine
         </p>
 
-        <form class="card form-card" action="portfolio.html" method="get">
+        <form id="portfolio-form" class="card form-card" novalidate>
           <div class="card-body p-4">
+            <div class="alert alert-danger d-none" data-error-summary role="alert"></div>
+
             <div class="mb-3">
               <label for="pf-name" class="form-label"
                 >Display name <span class="text-danger">*</span></label
@@ -74,6 +76,7 @@
                 placeholder="e.g. Mint or a nickname"
                 aria-describedby="pf-name-help"
               />
+              <div class="field-error text-danger small mt-1" data-error-for="name"></div>
               <div id="pf-name-help" class="form-text">
                 Do not enter personal data such as ID number, phone number or
                 address.
@@ -92,6 +95,7 @@
                 maxlength="500"
                 placeholder="e.g. designing web pages, drawing, playing music"
               ></textarea>
+              <div class="field-error text-danger small mt-1" data-error-for="enjoy"></div>
             </div>
             <div class="mb-3">
               <label for="pf-tried" class="form-label"
@@ -106,6 +110,7 @@
                 maxlength="500"
                 placeholder="e.g. joined a coding camp, built a small project"
               ></textarea>
+              <div class="field-error text-danger small mt-1" data-error-for="tried"></div>
             </div>
             <div class="mb-3">
               <label for="pf-curious" class="form-label"
@@ -121,6 +126,7 @@
                 maxlength="500"
                 placeholder="What would you like to learn more about?"
               ></textarea>
+              <div class="field-error text-danger small mt-1" data-error-for="curious"></div>
             </div>
           </div>
 
@@ -139,7 +145,7 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
+    <!--FOOTER-->
     <footer class="bg-dark text-light text-center py-3 mt-auto">
       <small>&copy; 2026 Portfolio Builder | CS100 group 20</small>
     </footer>
@@ -149,5 +155,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <!--save the form to localStorage-->
+    <script src="js/create-portfolio.js"></script>
   </body>
 </html>
