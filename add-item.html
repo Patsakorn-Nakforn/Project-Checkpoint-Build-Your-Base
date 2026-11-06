@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/storage.js" defer></script>
   <script src="js/validation.js" defer></script>
+  <script src="js/add-item.js" defer></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -41,14 +42,15 @@
     <h1 class="h3 mb-4">เพิ่มผลงานใหม่</h1>
 
     <div class="row g-4">
-      <div id="error-summary" class="alert alert-danger d-none" role="alert">
-        <strong>กรุณาตรวจสอบข้อมูลต่อไปนี้</strong>
-        <ul id="error-list" class="mb-0"></ul>
-       </div>
+      
        
       <!-- แบบฟอร์ม -->
       <div class="col-lg-8 col-md-6">
         <form id="item-form" class="needs-validation" novalidate>
+          <div id="error-summary" class="alert alert-danger d-none" role="alert">
+            <strong>กรุณาตรวจสอบข้อมูลต่อไปนี้</strong>
+            <ul id="error-list" class="mb-0"></ul>
+          </div>
 
           
           <!-- ข้อมูลผลงาน -->
