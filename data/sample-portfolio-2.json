@@ -1,6 +1,57 @@
 {
+  "id": "p002",
   "name": "Jamie Smith",
-  "itemCount": 3,
-  "enjoy": ["Reading", "Photography"],
-  "curious": ["Robotics", "Science"]
+  "enjoy": "Reading, Photography, Traveling",
+  "tried": "Participated in a photography competition, created digital artwork, and explored creative design.",
+  "curious": "Robotics, Science",
+  "items": [
+    {
+      "id": "item001",
+      "title": "Photography Competition",
+      "type": "Competition",
+      "date": "2026-06-10",
+      "role": "Contestant",
+      "description": "Participated in a photography competition.",
+      "skills": ["Photography", "Creativity"],
+      "reflection": {
+        "whatIDid": "Captured and submitted photographs.",
+        "whatILearned": "Learned photography composition.",
+        "challenge": "Finding the right lighting and angle.",
+        "nextStep": "Practice advanced photography techniques."
+      },
+      "evidence": ["https://example.com/jamie-1"]
+    },
+    {
+      "id": "item002",
+      "title": "Digital Artwork",
+      "type": "Project",
+      "date": "2026-06-15",
+      "role": "Artist",
+      "description": "Created digital artwork using creative tools.",
+      "skills": ["Digital Art", "Creativity"],
+      "reflection": {
+        "whatIDid": "Designed original digital artwork.",
+        "whatILearned": "Learned digital illustration techniques.",
+        "challenge": "Turning ideas into visual designs.",
+        "nextStep": "Explore more design tools."
+      },
+      "evidence": ["https://example.com/jamie-2"]
+    },
+    {
+      "id": "item003",
+      "title": "Creative Design Exploration",
+      "type": "Activity",
+      "date": "2026-06-20",
+      "role": "Designer",
+      "description": "Explored different creative design styles.",
+      "skills": ["Design", "Creativity"],
+      "reflection": {
+        "whatIDid": "Experimented with different design concepts.",
+        "whatILearned": "Learned how to develop creative ideas.",
+        "challenge": "Choosing suitable colors and layouts.",
+        "nextStep": "Explore science and robotics projects."
+      },
+      "evidence": ["https://example.com/jamie-3"]
+    }
+  ]
 }
