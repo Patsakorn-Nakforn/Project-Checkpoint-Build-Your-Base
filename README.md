@@ -16,14 +16,14 @@
 └── scripts/
 ```
 
-## สมาชิก
 | รหัส | ชื่อ | หน้าที่ | เลขทะเบียน |
+|---|---|---|---|
 | M1 | นายธเนศพล คงประเวช | Team Lead / Layout กลาง / data-tools.js / ส่งงาน | 6909617729 |
 | M2 | นายกฤตภาส อ่องมี | หน้าแรก (index) + storage.js + Retrospective | 6909617562 |
-| M3 | นายประภวิษณุ์ ทิพย์อักษรเดชา| Create Portfolio + Live Preview | 6909617778 |
+| M3 | นายประภวิษณุ์ ทิพย์อักษรเดชา | Create Portfolio + Live Preview | 6909617778 |
 | M4 | นายธิติพัฒน์ สุขขัง | Add Item (ข้อมูลผลงาน + add-item.js) + Sprint Plan | 6909617745 |
 | M5 | นายพรรษกร นักฟ้อน | Add Item (Reflection + Evidence) + validation.js | 6909686229 |
-| M6 | นายณัฐดนัย กลมกลาง| View Portfolio + render.js | 6909617620 |
+| M6 | นายณัฐดนัย กลมกลาง | View Portfolio + render.js | 6909617620 |
 | M7 | นายเตชิต อยู่คุ้ม | CSS / Responsive / QA + Checkpoint Tests | 6909617687 |
 
 ## Mapping: ชื่อ input ในฟอร์ม ↔ field ใน JSON
