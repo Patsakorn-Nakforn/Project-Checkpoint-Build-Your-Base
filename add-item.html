@@ -1,156 +1,205 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Item | Portfolio Builder</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body class="d-flex flex-column min-vh-100">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Item | Portfolio Builder</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    <!--NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <div class="container-fluid px-4">
+<body class="d-flex flex-column min-vh-100">
 
-        <a class="navbar-brand" href="index.html"><h3><b>Portfolio Builder</b></h2></a>
+  <!--NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid px-4">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="create-portfolio.html">Create Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link active" href="add-item.html">Add Item</a></li>
-                <li class="nav-item"><a class="nav-link" href="portfolio.html">View Portfolio</a></li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="index.html">
+        <h3><b>Portfolio Builder</b></h2>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="create-portfolio.html">Create Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="add-item.html">Add Item</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">View Portfolio</a></li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- MAIN -->
-    <main class="container my-4 flex-grow-1">
-      <h1 class="h3 mb-4">เพิ่มผลงานใหม่</h1>
+  <!-- MAIN -->
+  <main class="container my-4 flex-grow-1">
+    <h1 class="h3 mb-4">เพิ่มผลงานใหม่</h1>
 
-      <div class="row g-4">
+    <div class="row g-4">
 
-        <!-- แบบฟอร์ม -->
-        <div class="col-lg-8 col-md-6">
-          <form id="item-form" novalidate>
+      <!-- แบบฟอร์ม -->
+      <div class="col-lg-8 col-md-6">
+        <form id="item-form" class="needs-validation" novalidate>
 
-            <!-- ข้อมูลผลงาน -->
-            <fieldset class="mb-4">
-              <legend class="h5">1.ข้อมูลผลงาน</legend>
+          <!-- ข้อมูลผลงาน -->
+          <fieldset class="mb-4">
+            <legend class="h5">1.ข้อมูลผลงาน</legend>
 
-              <div class="mb-3">
-                <label for="portfolio-select" class="form-label">เพิ่มให้ Portfolio</label>
-                <select id="portfolio-select" name="portfolioId" class="form-select" required>
-                  <option value="">-- เลือก Portfolio --</option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="title" class="form-label">ชื่อผลงาน</label>
-                <input type="text" id="title" name="title" class="form-control" required />
-              </div>
-
-              <div class="mb-3">
-                <label for="type" class="form-label">ประเภท</label>
-                <select id="type" name="type" class="form-select" required>
-                  <option value="">-- เลือกประเภท --</option>
-                  <option>Course Assignment</option>
-                  <option>Project</option>
-                  <option>Activity</option>
-                  <option>Competition</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="date" class="form-label">วันที่</label>
-                <input type="date" id="date" name="date" class="form-control" required />
-              </div>
-
-              <div class="mb-3">
-                <label for="role" class="form-label">บทบาท</label>
-                <input type="text" id="role" name="role" class="form-control" required />
-              </div>
-
-              <div class="mb-3">
-                <label for="description" class="form-label">รายละเอียด</label>
-                <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label for="skills" class="form-label">ทักษะ</label>
-                <input type="text" id="skills" name="skills" class="form-control"
-                       placeholder="เช่น HTML, CSS, JavaScript" required />
-                <div class="form-text">คั่นแต่ละทักษะด้วยเครื่องหมาย(,)</div>
-              </div>
-
-            </fieldset>
-
-            <!-- สิ่งที่ได้รับ (Reflection) -->
-            <fieldset class="mb-4">
-              <legend class="h5">2.สิ่งที่ได้รับ (Reflection)</legend>
-
-              <div class="mb-3">
-                <label for="whatIDid" class="form-label">สิ่งที่ทำ (What I did)</label>
-                <textarea id="description" name="whatIDid" class="form-control" rows="3" required></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label for="whatILearned" class="form-label">สิ่งที่ได้เรียนรู้ (What I learn)</label>
-                <textarea id="description" name="whatILearned" class="form-control" rows="3" required></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label for="challenge" class="form-label">ความท้าทาย (Challenge)</label>
-                <textarea id="description" name="challenge" class="form-control" rows="3" required></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label for="nextStep" class="form-label">สิ่งที่จะทำในอนาคต (Next Step)</label>
-                <textarea id="description" name="nextStep" class="form-control" rows="3" required></textarea>
-              </div>
-            </fieldset>
-            
-            <button type="submit" class="btn btn-primary">บันทึกผลงาน</button>
-          </form>
-        </div>
-
-        <!-- กล่องเคล็ดลับ -->
-        <div class="col-lg-4 col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h2 class="h6">เคล็ดลับ</h2>
-              <ul class="mb-0 small">
-                <li>ตั้งชื่อผลงานให้สั้นและชัดเจน</li>
-                <li>เขียน Role ให้ตรงกับสิ่งที่ทำจริง</li>
-                <li>Skills ใส่ได้หลายรายการ คั่นด้วย (,)</li>
-              </ul>
+            <div class="mb-3">
+              <label for="portfolio-select" class="form-label">เพิ่มให้ Portfolio</label>
+              <select id="portfolio-select" name="portfolioId" class="form-select" required>
+                <option value="">-- เลือก Portfolio --</option>
+              </select>
             </div>
+
+            <div class="mb-3">
+              <label for="title" class="form-label">ชื่อผลงาน</label>
+              <input type="text" id="title" name="title" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="type" class="form-label">ประเภท</label>
+              <select id="type" name="type" class="form-select" required>
+                <option value="">-- เลือกประเภท --</option>
+                <option>Course Assignment</option>
+                <option>Project</option>
+                <option>Activity</option>
+                <option>Competition</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="date" class="form-label">วันที่</label>
+              <input type="date" id="date" name="date" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="role" class="form-label">บทบาท</label>
+              <input type="text" id="role" name="role" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">รายละเอียด</label>
+              <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="skills" class="form-label">ทักษะ</label>
+              <input type="text" id="skills" name="skills" class="form-control" placeholder="เช่น HTML, CSS, JavaScript"
+                required />
+              <div class="form-text">คั่นแต่ละทักษะด้วยเครื่องหมาย(,)</div>
+            </div>
+
+          </fieldset>
+
+          <!-- สิ่งที่ได้รับ (Reflection) -->
+          <fieldset class="mb-4">
+            <legend class="h5">2.สิ่งที่ได้รับ (Reflection)</legend>
+
+            <div class="mb-3">
+              <label for="whatIDid" class="form-label">สิ่งที่ทำ (What I did)</label>
+              <textarea id="description" name="whatIDid" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="whatILearned" class="form-label">สิ่งที่ได้เรียนรู้ (What I learn)</label>
+              <textarea id="description" name="whatILearned" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="challenge" class="form-label">ความท้าทาย (Challenge)</label>
+              <textarea id="description" name="challenge" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="nextStep" class="form-label">สิ่งที่จะทำในอนาคต (Next Step)</label>
+              <textarea id="description" name="nextStep" class="form-control" rows="3" required></textarea>
+            </div>
+          </fieldset>
+
+          <!-- หลักฐาน (Evidence) -->
+          <fieldset class="mb-4">
+            <legend class="h5">3.หลักฐาน (Evidence)</legend>
+
+            <div class="mb-3">
+              <label for="evidence1" class="form-label">หลักฐานของผลงานชิ้นที่ 1</label>
+              <input type="url" id="evidence-list" name="evidence1" class="form-control"
+                placeholder="https://example.com" pattern="https://.+" required />
+              <div class="invalid-feedback">
+                กรุณากรอก URL ที่ถูกต้องและเริ่มต้นด้วย https:// เท่านั้น
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="evidence2" class="form-label">หลักฐานของผลงานชิ้นที่ 2</label>
+              <input type="url" id="evidence-list" name="evidence2" class="form-control"
+                placeholder="https://example.com" pattern="https://.+" />
+              <div class="invalid-feedback">
+                กรุณากรอก URL ที่ถูกต้องและเริ่มต้นด้วย https:// เท่านั้น
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="evidence3" class="form-label">หลักฐานของผลงานชิ้นที่ 3</label>
+              <input type="url" id="evidence-list" name="evidence3" class="form-control"
+                placeholder="https://example.com" pattern="https://.+" />
+              <div class="invalid-feedback">
+                กรุณากรอก URL ที่ถูกต้องและเริ่มต้นด้วย https:// เท่านั้น
+              </div>
+            </div>
+
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary">บันทึกผลงาน</button>
+        </form>
+      </div>
+
+      <!-- กล่องเคล็ดลับ -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h6">เคล็ดลับ</h2>
+            <ul class="mb-0 small">
+              <li>ตั้งชื่อผลงานให้สั้นและชัดเจน</li>
+              <li>เขียน Role ให้ตรงกับสิ่งที่ทำจริง</li>
+              <li>Skills ใส่ได้หลายรายการ คั่นด้วย (,)</li>
+            </ul>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark text-light text-center py-3 mt-auto">
-      <small>&copy; 2026 Portfolio Builder | CS100 group 20</small>
-    </footer>
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light text-center py-3 mt-auto">
+    <small>&copy; 2026 Portfolio Builder | CS100 group 20</small>
+  </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+    (() => {
+      'use strict'
+
+      const forms = document.querySelectorAll('.needs-validation')
+
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+
 </html>
