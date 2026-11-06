@@ -56,207 +56,58 @@
 <main class="container py-5">
 
     <!-- PROFILE HEADER -->
-    <section class="mb-5">
+<section class="mb-5">
+    <div class="d-flex align-items-center gap-4">
 
-        <div class="d-flex align-items-center gap-4">
-
-            <!-- Avatar -->
-            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
-                 style="width: 110px; height: 110px; font-size: 36px;">
-                P
-            </div>
-
-            <!-- Profile Information -->
-            <div>
-               <h1 class="fw-bold">Alex Johnson</h1>
-                <p class="text-muted">
-                    Welcome to my personal portfolio!
-                </p>
-            </div>
-
+        <div id="profile-avatar"
+             class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+             style="width: 110px; height: 110px; font-size: 36px;">
+            ?
         </div>
 
-    </section>
+        <div>
+            <h1 class="fw-bold" id="profile-name">Loading...</h1>
+            <p class="text-muted" id="profile-welcome">
+                Welcome to my personal portfolio!
+            </p>
+        </div>
+
+    </div>
+</section>
 
     <!-- INTERESTS -->
     <section class="row g-3">
 
-        <div class="col-md-4">
-            <div class="card h-100 p-3">
-                <h2 class="h5">What I Enjoy</h2>
-                <p>Guitar, Music, Gaming</p>
-            </div>
+    <div class="col-md-4">
+        <div class="card h-100 p-3">
+            <h2 class="h5">What I Enjoy</h2>
+            <div id="enjoy-list">Loading...</div>
         </div>
+    </div>
 
-        <div class="col-md-4">
-            <div class="card h-100 p-3">
-                <h2 class="h5">Building a portfolio website using HTML, CSS, and Bootstrap.</h2>
-                <p>New experiences I have tried.</p>
-            </div>
+    <div class="col-md-4">
+        <div class="card h-100 p-3">
+            <h2 class="h5">What I Tried</h2>
+            <div id="tried-list">Loading...</div>
         </div>
+    </div>
 
-        <div class="col-md-4">
-            <div class="card h-100 p-3">
-                <h2 class="h5">Web Development, AI</h2>
-                <p>Things I want to explore.</p>
-            </div>
+    <div class="col-md-4">
+        <div class="card h-100 p-3">
+            <h2 class="h5">What I'm Curious About</h2>
+            <div id="curious-list">Loading...</div>
         </div>
+    </div>
 
-    </section>
-
-<!-- PORTFOLIO ITEMS -->
+</section>
+    <!-- PORTFOLIO ITEMS -->
 <section class="mt-5 mb-5">
     <h2 class="fw-bold mb-4">My Portfolio Items</h2>
 
-    <div class="row g-4">
-
-        <!-- ITEM 1 -->
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body p-4">
-
-                    <span class="badge bg-primary mb-2">
-                        Project
-                    </span>
-
-                    <h3 class="h5 fw-bold">
-                        Portfolio Builder Website
-                    </h3>
-
-                    <p class="text-muted small">
-                        Date: 2026
-                    </p>
-
-                    <p><strong>Role:</strong> Web Developer</p>
-
-                    <p>
-                        Designed and developed a personal
-                        portfolio website using HTML, CSS,
-                        and Bootstrap.
-                    </p>
-
-                    <p class="fw-bold mb-2">Skills</p>
-
-                    <span class="badge bg-primary">HTML</span>
-                    <span class="badge bg-primary">CSS</span>
-                    <span class="badge bg-primary">Bootstrap</span>
-
-                    <hr>
-
-                    <details>
-                        <summary class="fw-bold">
-                            Reflection
-                        </summary>
-
-                        <div class="mt-3">
-                            <p>
-                                <strong>What I did:</strong>
-                                Created a portfolio website.
-                            </p>
-
-                            <p>
-                                <strong>What I learned:</strong>
-                                Learned HTML structure and Bootstrap.
-                            </p>
-
-                            <p>
-                                <strong>Challenge:</strong>
-                                Making the website responsive.
-                            </p>
-
-                            <p>
-                                <strong>Next Step:</strong>
-                                Improve the website design.
-                            </p>
-                        </div>
-                    </details>
-
-                    <hr>
-
-                    <a href="docs/evidence/w3c-index.png"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Evidence
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- ITEM 2 -->
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body p-4">
-
-                    <span class="badge bg-success mb-2">
-                        Course Assignment
-                    </span>
-
-                    <h3 class="h5 fw-bold">
-                        Portfolio Management Form
-                    </h3>
-
-                    <p class="text-muted small">
-                        Date: 2026
-                    </p>
-
-                    <p><strong>Role:</strong> Frontend Developer</p>
-
-                    <p>
-                        Created a form for adding portfolio
-                        items with project information
-                        and supporting evidence.
-                    </p>
-
-                    <p class="fw-bold mb-2">Skills</p>
-
-                    <span class="badge bg-primary">HTML</span>
-                    <span class="badge bg-primary">Bootstrap</span>
-                    <span class="badge bg-primary">JavaScript</span>
-
-                    <hr>
-
-                    <details>
-                        <summary class="fw-bold">
-                            Reflection
-                        </summary>
-
-                        <div class="mt-3">
-                            <p>
-                                <strong>What I did:</strong>
-                                Created a portfolio input form.
-                            </p>
-
-                            <p>
-                                <strong>What I learned:</strong>
-                                Practiced creating HTML forms.
-                            </p>
-
-                            <p>
-                                <strong>Challenge:</strong>
-                                Validating user input.
-                            </p>
-
-                            <p>
-                                <strong>Next Step:</strong>
-                                Improve form functionality.
-                            </p>
-                        </div>
-                    </details>
-
-                    <hr>
-
-                    <a href="docs/evidence/add-item-1280.png"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Evidence
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
+    <div id="portfolio-items" class="row g-4">
+        <!-- Items will be generated by render.js -->
     </div>
+</section>
 </section>
 
 </main>
@@ -272,6 +123,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="js/render.js"></script>
     <script src="js/sample-data.js"></script>
     <script src="js/data-tools.js"></script>
   </body>
