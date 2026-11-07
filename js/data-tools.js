@@ -12,7 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // TODO(M6): เปลี่ยนเป็นชื่อฟังก์ชัน render จริงใน render.js
-  const refresh = () => {
+   const refresh = () => {
+  // ให้หน้าแสดง portfolio ล่าสุด ไม่ติด ?id= เดิมใน URL
+    const id = Storage.getCurrentId();
+    
+    if (id && location.search) {
+      history.replaceState(null, '', location.pathname + '?id=' + encodeURIComponent(id));
+    }
+
     if (typeof renderPortfolio === 'function') renderPortfolio();
     else location.reload();
   };
@@ -63,14 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3) Import
   const isStr = v => typeof v === 'string';
-  const isHttps = v => isStr(v) && /^https?:\/\/.+/.test(v);
+  // รับลิงก์ http(s) หรือ path ในโปรเจกต์ เช่น docs/evidence/index-1280.png
+  // ไม่รับข้อความที่มี ":" นำหน้า เช่น javascript: หรือ data:
+  const isLink = v => isStr(v) && 
+  (/^https?:\/\/\S+$/.test(v) || /^(?!\/\/)[^:\s]+$/.test(v));
 
   function validateItem(i) {
     return !!i && typeof i === 'object' &&
       isStr(i.id) && isStr(i.title) &&
       Array.isArray(i.skills) && i.skills.every(isStr) &&
       !!i.reflection && typeof i.reflection === 'object' &&
-      Array.isArray(i.evidence) && i.evidence.every(isHttps);
+      Array.isArray(i.evidence) && i.evidence.every(isLink);
   }
 
   function validate(p) {
