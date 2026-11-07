@@ -11,6 +11,7 @@
   <script src="js/storage.js" defer></script>
   <script src="js/validation.js" defer></script>
   <script src="js/add-item.js" defer></script>
+  <script src="js/preview.js" defer></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -59,7 +60,7 @@
 
             <div class="mb-3">
               <label for="portfolio-select" class="form-label">เพิ่มให้ Portfolio</label>
-              <select id="portfolio-select" name="portfolioId" class="form-select" maxlength="10" required>
+              <select id="portfolio-select" name="portfolioId" class="form-select" required>
                 <option value="">-- เลือก Portfolio --</option>
               </select>
               <div class="field-error text-danger small"></div>
@@ -183,6 +184,12 @@
             </ul>
           </div>
         </div>
+
+        <!-- Live Preview (Owner: M3 · Issue #23 · js/preview.js) -->
+        <div class="mt-4">
+          <h2 class="h6 text-muted">Preview</h2>
+          <div id="item-preview"></div>
+        </div>
       </div>
     </div>
   </main>
@@ -192,18 +199,6 @@
     <small>&copy; 2026 Portfolio Builder | CS100 group 20</small>
   </footer>
 
-  <!-- script -->
-  <script>
-    const form = document.querySelector('#item-form');
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        if (validateItem(this)) {
-            alert('ข้อมูลถูกต้อง พร้อมบันทึกผลงาน');
-        }
-    });
-  </script>
 </body>
 
-</html>
+</html
