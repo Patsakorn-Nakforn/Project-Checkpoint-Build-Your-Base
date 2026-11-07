@@ -110,6 +110,18 @@
 </section>
 </section>
 
+<section class="container pb-5">
+    <h2 class="h5 fw-bold">จัดการข้อมูล</h2>
+    <div class="d-flex flex-wrap gap-2">
+        <button type="button" id="btn-load-sample" class="btn btn-outline-primary">โหลดข้อมูลตัวอย่าง</button>
+        <button type="button" id="btn-export" class="btn btn-outline-secondary">Export JSON</button>
+        <label for="file-import" class="btn btn-outline-secondary mb-0">Import JSON</label>
+        <input type="file" id="file-import" accept=".json,application/json" class="d-none">
+        <button type="button" id="btn-clear" class="btn btn-outline-danger">ลบข้อมูลทั้งหมด</button>
+    </div>
+    <div id="data-msg"></div>
+</section>
+
 </main>
 
 

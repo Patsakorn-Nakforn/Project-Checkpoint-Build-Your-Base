@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3) Import
   const isStr = v => typeof v === 'string';
-  const isHttps = v => isStr(v) && /^https:\/\/.+/.test(v);
+  const isHttps = v => isStr(v) && /^https?:\/\/.+/.test(v);
 
   function validateItem(i) {
     return !!i && typeof i === 'object' &&
