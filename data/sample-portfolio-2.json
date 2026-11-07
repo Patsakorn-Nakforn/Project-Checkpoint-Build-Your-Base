@@ -19,7 +19,7 @@
         "challenge": "Finding the right lighting and angle.",
         "nextStep": "Practice advanced photography techniques."
       },
-      "evidence": ["https://example.com/jamie-1"]
+      "evidence": ["docs/evidence/index-1280.png"]
     },
     {
       "id": "item002",
@@ -35,7 +35,7 @@
         "challenge": "Turning ideas into visual designs.",
         "nextStep": "Explore more design tools."
       },
-      "evidence": ["https://example.com/jamie-2"]
+      "evidence": ["docs/evidence/index-1280.png"]
     },
     {
       "id": "item003",
@@ -51,7 +51,7 @@
         "challenge": "Choosing suitable colors and layouts.",
         "nextStep": "Explore science and robotics projects."
       },
-      "evidence": ["https://example.com/jamie-3"]
+      "evidence": ["docs/evidence/index-1280.png"]
     }
   ]
 }

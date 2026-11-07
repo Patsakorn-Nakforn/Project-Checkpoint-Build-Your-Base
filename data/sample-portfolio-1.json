@@ -19,7 +19,7 @@
         "challenge": "Understanding programming logic.",
         "nextStep": "Practice coding more."
       },
-      "evidence": ["https://example.com/alex-1"]
+      "evidence": ["docs/evidence/index-1280.png"]
     },
     {
       "id": "item002",
@@ -35,7 +35,7 @@
         "challenge": "Designing the page layout.",
         "nextStep": "Learn Bootstrap and JavaScript."
       },
-      "evidence": ["https://example.com/alex-2"]
+      "evidence": ["docs/evidence/index-1280.png"]
     },
     {
       "id": "item003",
@@ -51,7 +51,7 @@
         "challenge": "Organizing page structure.",
         "nextStep": "Explore semantic HTML."
       },
-      "evidence": ["https://example.com/alex-3"]
+      "evidence": ["docs/evidence/index-1280.png"]
     },
     {
       "id": "item004",
@@ -67,7 +67,7 @@
         "challenge": "Making the layout look consistent.",
         "nextStep": "Practice responsive design."
       },
-      "evidence": ["https://example.com/alex-4"]
+      "evidence": ["docs/evidence/index-1280.png"]
     },
     {
       "id": "item005",
@@ -83,7 +83,7 @@
         "challenge": "Solving unfamiliar problems.",
         "nextStep": "Explore AI and web development."
       },
-      "evidence": ["https://example.com/alex-5"]
+      "evidence": ["docs/evidence/index-1280.png"]
     }
   ]
 }
