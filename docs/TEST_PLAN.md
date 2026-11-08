@@ -1,10 +1,10 @@
 # Test Plan — Project Checkpoint (Issue #25, owner: M7)
 
 - ทดสอบบน: https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/
-- Commit SHA ที่ทดสอบ: `f60d597`
-- เบราว์เซอร์: Chromium 158.0.8127.18 (Playwright) · มือถือจริง: `iPhone 17` (ทดสอบเอง)
+- Commit SHA ที่ทดสอบ: f60d597
+- เบราว์เซอร์: Chromium 158.0.8127.18 (Playwright) · มือถือจริง: iPhone 17 (ทดสอบเอง)
 - วิธีทดสอบ: รันสคริปต์ run-checkpoint-tests.js ที่เปิดเบราว์เซอร์จริงทำตามขั้นตอนของแต่ละข้อ แล้วเก็บภาพ/คลิปใน docs/evidence/
-- ผู้ทดสอบ: M7 · ผู้ตรวจซ้ำ (Incognito): `____________`
+- ผู้ทดสอบ: M7 · ผู้ตรวจซ้ำ (Incognito): M5
 
 ใช้ข้อมูลสมมติเท่านั้น ไม่มีข้อมูลส่วนตัว
 
