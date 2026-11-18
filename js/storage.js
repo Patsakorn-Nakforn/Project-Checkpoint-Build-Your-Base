@@ -16,8 +16,10 @@ const Storage = (() => {
 
       return portfolios;
     } catch (error) {
-      console.error("Load error:", error);
+      console.warn("Load warning: Invalid portfolio data. Resetting storage.");
+
       localStorage.setItem(PORTFOLIOS_KEY, JSON.stringify([]));
+
       return [];
     }
   }
