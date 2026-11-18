@@ -16,8 +16,10 @@ const Storage = (() => {
 
       return portfolios;
     } catch (error) {
-      console.error("Load error:", error);
+      console.warn("Load warning: Invalid portfolio data. Resetting storage.");
+
       localStorage.setItem(PORTFOLIOS_KEY, JSON.stringify([]));
+
       return [];
     }
   }
@@ -103,9 +105,15 @@ const Storage = (() => {
       portfolio.items = [];
     }
 
-    // Evidence 1 is required
-    if (!itemData.evidence1?.trim()) {
-      console.error("Evidence 1 is required");
+    // At least one evidence is required
+    const hasEvidence = [
+      itemData.evidence1,
+      itemData.evidence2,
+      itemData.evidence3,
+    ].some((url) => typeof url === "string" && url.trim() !== "");
+
+    if (!hasEvidence) {
+      console.error("At least one evidence is required");
       return null;
     }
 
