@@ -26,7 +26,7 @@ window.SAMPLE_DATA = [
           "nextStep": "Practice coding more."
         },
         "evidence": [
-          "docs/evidence/index-1280.png"
+          "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/index-1280.png"
         ]
       },
       {
@@ -47,7 +47,7 @@ window.SAMPLE_DATA = [
           "nextStep": "Learn Bootstrap and JavaScript."
         },
         "evidence": [
-          "docs/evidence/index-1280.png"
+          "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/add-item-1280.png"
         ]
       },
       {
@@ -67,7 +67,7 @@ window.SAMPLE_DATA = [
           "nextStep": "Explore semantic HTML."
         },
         "evidence": [
-          "docs/evidence/index-1280.png"
+          "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/create-portfolio-1280.png"
         ]
       },
       {
@@ -88,7 +88,7 @@ window.SAMPLE_DATA = [
           "nextStep": "Practice responsive design."
         },
         "evidence": [
-          "docs/evidence/index-1280.png"
+          "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/portfolio-1280.png"
         ]
       },
       {
@@ -109,7 +109,7 @@ window.SAMPLE_DATA = [
           "nextStep": "Explore AI and web development."
         },
         "evidence": [
-          "docs/evidence/index-1280.png"
+          "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/index-768.png"
         ]
       }
     ]
@@ -139,7 +139,7 @@ window.SAMPLE_DATA = [
           "nextStep": "Practice advanced photography techniques."
         },
         "evidence": [
-          "docs/evidence/index-1280.png"
+          "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/add-item-768.png"
         ]
       },
       {
@@ -160,7 +160,7 @@ window.SAMPLE_DATA = [
           "nextStep": "Explore more design tools."
         },
         "evidence": [
-          "docs/evidence/index-1280.png"
+          "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/create-portfolio-768.png"
         ]
       },
       {
@@ -181,7 +181,7 @@ window.SAMPLE_DATA = [
           "nextStep": "Explore science and robotics projects."
         },
         "evidence": [
-          "docs/evidence/index-1280.png"
+          "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/portfolio-768.png"
         ]
       }
     ]

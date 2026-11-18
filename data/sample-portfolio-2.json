@@ -12,14 +12,19 @@
       "date": "2026-06-10",
       "role": "Contestant",
       "description": "Participated in a photography competition.",
-      "skills": ["Photography", "Creativity"],
+      "skills": [
+        "Photography",
+        "Creativity"
+      ],
       "reflection": {
         "whatIDid": "Captured and submitted photographs.",
         "whatILearned": "Learned photography composition.",
         "challenge": "Finding the right lighting and angle.",
         "nextStep": "Practice advanced photography techniques."
       },
-      "evidence": ["docs/evidence/index-1280.png"]
+      "evidence": [
+        "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/add-item-768.png"
+      ]
     },
     {
       "id": "item002",
@@ -28,14 +33,19 @@
       "date": "2026-06-15",
       "role": "Artist",
       "description": "Created digital artwork using creative tools.",
-      "skills": ["Digital Art", "Creativity"],
+      "skills": [
+        "Digital Art",
+        "Creativity"
+      ],
       "reflection": {
         "whatIDid": "Designed original digital artwork.",
         "whatILearned": "Learned digital illustration techniques.",
         "challenge": "Turning ideas into visual designs.",
         "nextStep": "Explore more design tools."
       },
-      "evidence": ["docs/evidence/index-1280.png"]
+      "evidence": [
+        "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/create-portfolio-768.png"
+      ]
     },
     {
       "id": "item003",
@@ -44,14 +54,19 @@
       "date": "2026-06-20",
       "role": "Designer",
       "description": "Explored different creative design styles.",
-      "skills": ["Design", "Creativity"],
+      "skills": [
+        "Design",
+        "Creativity"
+      ],
       "reflection": {
         "whatIDid": "Experimented with different design concepts.",
         "whatILearned": "Learned how to develop creative ideas.",
         "challenge": "Choosing suitable colors and layouts.",
         "nextStep": "Explore science and robotics projects."
       },
-      "evidence": ["docs/evidence/index-1280.png"]
+      "evidence": [
+        "https://patsakorn-nakforn.github.io/Project-Checkpoint-Build-Your-Base/docs/evidence/portfolio-768.png"
+      ]
     }
   ]
 }

@@ -55,8 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolio = list.find(p => p.id === Storage.getCurrentId()) || list[0];
     if (!portfolio) return showMsg('ไม่มีข้อมูลให้ Export', true);
 
-    const payload = { version: 1, exportedAt: new Date().toISOString(), portfolio };
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(portfolio, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -70,10 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3) Import
   const isStr = v => typeof v === 'string';
-  // รับลิงก์ http(s) หรือ path ในโปรเจกต์ เช่น docs/evidence/index-1280.png
-  // ไม่รับข้อความที่มี ":" นำหน้า เช่น javascript: หรือ data:
-  const isLink = v => isStr(v) && 
-  (/^https?:\/\/\S+$/.test(v) || /^(?!\/\/)[^:\s]+$/.test(v));
+   // รับเฉพาะลิงก์ http(s) ให้ตรงกับที่ฟอร์ม Add Item รับ
+  const isLink = v => isStr(v) && /^https?:\/\/\S+$/.test(v);
 
   function validateItem(i) {
     return !!i && typeof i === 'object' &&
