@@ -1,3 +1,4 @@
+(function () {
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("portfolio-form");
   if (!form) return;
@@ -99,3 +100,4 @@ function addPortfolio(profile) {
   localStorage.setItem(KEY, JSON.stringify(list));
   return portfolio;
 }
+})();
