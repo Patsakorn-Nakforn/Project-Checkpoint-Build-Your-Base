@@ -1,64 +1,228 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Challenge Website</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body class="d-flex flex-column min-vh-100">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <div class="container-fluid px-4">
-        <a class="navbar-brand" href="index.html"
-          ><h3><b>Portfolio Builder</b></h3></a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="create-portfolio.html">Create Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="add-item.html">Add Item</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">View Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="Challenge_Page.html">Challenge Page</a>
-            </li>
-          </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Challenge Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+    integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/Challenge_Website-style.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">
+        <h3><b>Portfolio Builder</b></h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="create-portfolio.html">Create Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="add-item.html">Add Item</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">View Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Challenge_Page.html">Challenge Page</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Challenge Website-->
+
+  <!--Instroduce Challenge-->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="display-5 fw-bold">Challenge Website</h2>
+      <p class="fs-5 text-secondary mt-3">
+        find 3 or more defects in challenge website below.
+      </p>
+      <h2 class="text-secondary mt-2">___________________________________________</h2>
+  </section>
+
+
+  <section class="Challenge_background">
+    <!--Dark/light mode botton-->
+    <header class="mb-4">
+      <div class="container mt-5">
+        <div class="d-flex justify-content-end ">
+          <div class="btn-group">
+            <button class="btn btn-secondary" data-bs-theme-value="dark">Dark</button>
+            <button class="btn btn-light" data-bs-theme-value="light">Light</button>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/darkmodetoggle.js"></script>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark text-light text-center py-3 mt-auto">
-      <small>&copy; 2026 Portfolio Builder | CS100 group 20</small>
-    </footer>
+    <div class="mb-4">
+      <div class="card bg-danger rounded-4 border-6 m-4 shadow">
+        <div class="card-body text-center ">
+          <h1 class="display-2 fw-normal text-light mb-3">Thaammasat Khao Man Kai</h1>
+        </div>
+      </div>
+    </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <div class="row mt-4 mb-6 border-1">
+      <div class="col-md-4 ms-4">
+        <img src="media/stock-photo-hainanese-chicken-rice-on-the-table-573192868.jpg" alt=""
+          class="img-fluid rounded mt-3 ms-3">
+      </div>
+      <div class="card col-md-7 ms-3 mt-1">
+        <p class="display-6 m-3">ธรรมศาสตร์ข้าวมันไก่ ร้านเปิดใหม่ที่โรงอาหาร SC มีทั้งข้าวมันไก่ต้มและไก่ทอด
+          รวมถึงเมนูอื่นๆ มากมาย</p>
+      </div>
+    </div>
+
+    <!--Menu-->
+    <div class="container mt-3">
+      <h1 class="text-center display-3 fw-bold mt-3 ms-5 text-danger">Menu</h1>
+      <h2 class="text-center display-5 ms-5 mb-4 text-center text-danger">______________________________________</h2>
+    </div>
+
+    <div class="row ms-3 text-center">
+      <div class="card col-md-3 m-3 p-1">
+        <h3 class="mt-1 fw-bold">ข้าวมันไก่ต้ม -40.</h3>
+        <img src="media/stock-photo-hainanese-chicken-rice-on-the-table-573192868.jpg" alt=""
+          class="img_card p-2 rounded">
+      </div>
+
+      <div class="card col-md-3 m-3">
+        <h3 class="mt-1 fw-bold">ข้าวมันไก่ทอด -40.</h3>
+        <img src="media/stock-photo-hainanese-chicken-rice-on-the-table-573192868.jpg" alt=""
+          class="img_card p-2 rounded">
+      </div>
+
+      <div class="card col-md-3 m-3">
+        <h3 class="mt-1 fw-bold">ข้าวมันไก่ย่าง -40.</h3>
+        <img src="media/stock-photo-hainanese-chicken-rice-on-the-table-573192868.jpg" alt=""
+          class="img_card p-2 rounded">
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="Challenge_Website.html" class="btn align-items-center btn-danger btn-lg mt-4 mb-7 me-3">
+        View all Menu
+      </a>
+    </div>
+
+    <!--Review-->
+    <div class="text-center mt-3">
+      <h1 class="mt-5 mb-5"> </h1>
+      <h1 class="text-center display-3 fw-bold mt-4 mb-6 text-danger">Review</h1>
+    </div>
+
+    <div class="row mt-4 ms-1">
+      <div class="col-md-4">
+        <div class="card mb-3 data-bs-container= body data-bs-toggle=popover data-bs-placement=top"
+          data-bs-content="Email: john@gmail.com">
+          <div class="card-body">
+            <div class="d-flex gap-3 ">
+              <div class="user-img ">
+                <img src="https://i.pinimg.com/736x/51/e6/bb/51e6bb6707e3a43695cad073fbd9d11b.jpg"
+                  style="width: 125px; height:125px;" alt="" class="rounded-circle img-fluid">
+              </div>
+              <div>
+                <h4 class="fw-bold">Peter Parker</h4>
+                <h5>คณะวิทยาศาสตร์</h5>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <h6>ok</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-3 data-bs-container= body data-bs-toggle=popover data-bs-placement=top"
+          data-bs-content="Email: john@gmail.com">
+          <div class="card-body">
+            <div class="d-flex gap-3 ">
+              <div class="user-img ">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUHoQWrc1vJTFZTaZRXFXc56FrdNABQNctAwJ0u1Hf8SAHO7cfSC75160&s=10"
+                  style="width: 125px; height:127px;" alt="" class="rounded-circle img-fluid">
+              </div>
+              <div class="user-info ">
+                <h4>Forrest Gump</h4>
+                <h5>คณะวิทยาศาสตร์</h5>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <h6>ชีวิตมันก็เหมือนข้าวมันไก่ คุณไม่รู้หรอกว่าวันไหนไก่ทอดจะหมดก่อนบ้าง</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-3 data-bs-container= body data-bs-toggle=popover data-bs-placement=top"
+          data-bs-content="Email: john@gmail.com">
+          <div class="card-body">
+            <div class="d-flex gap-3 ">
+              <div class="user-img ">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6x5yHb9Tvk9AqQ7zY6Rj1te0bQM29_L-Wp6VbPeen3MX8GuzZR1T1JY2z&s=10"
+                  style="width: 150px; height:125px;" alt="" class="rounded-circle img-fluid">
+              </div>
+              <div class="user-info ">
+                <h4>Bruce Wayne</h4>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <h6>เว็บ detect เยอะมาก</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    </div>
+  </section>
+
+  <script>
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    const popoverList = [...popoverTriggerList].map(
+      popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl)
+    );
+  </script>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light text-center py-3 mt-auto">
+    <small>&copy; 2026 Portfolio Builder | CS100 group 20</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

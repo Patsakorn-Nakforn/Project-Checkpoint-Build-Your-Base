@@ -1,0 +1,222 @@
+
+/* ---------- Theme variables ---------- */
+:root {
+  --brand: #4f46e5;
+  --brand-dark: #3730a3;
+  --brand-soft: #eef2ff;
+  --accent: #f59e0b;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --surface: #ffffff;
+  --page-bg: #f8fafc;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --success: #15803d;
+  --radius: 0.75rem;
+  --shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+  --bs-primary: var(--brand);
+  --bs-link-color: var(--brand);
+  --bs-link-hover-color: var(--brand-dark);
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: "Noto Sans Thai", "Sarabun", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+/*
+.img_card{
+  width: 300px ;
+  text-align: center;
+  height: auto;
+}
+
+/* ---------- Navbar / Footer ---------- */
+.navbar .nav-link {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.9rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.navbar .nav-link.active {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+}
+
+.navbar-brand h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+footer {
+  font-size: 0.9rem;
+}
+
+.Challenge_background{
+  background-color: #f8ffd8;
+}
+
+
+
+/* ---------- Buttons ---------- */
+button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+/* ---------- Badge ---------- */
+.badge {
+  font-weight: 500;
+}
+
+.badge-skill {
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  padding: 0.35em 0.75em;
+  margin: 0 0.25rem 0.25rem 0;
+  display: inline-block;
+}
+
+.badge-type {
+  background: var(--accent);
+  color: #1f2937;
+  border-radius: 999px;
+  padding: 0.35em 0.75em;
+}
+
+/* ---------- Forms ---------- */
+.form-label {
+  font-weight: 600;
+}
+
+.req,
+.form-label.required::after {
+  color: var(--danger);
+}
+
+.form-label.required::after {
+  content: " *";
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.2);
+}
+
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--surface);
+  min-width: 0;
+}
+
+legend {
+  float: none;
+  width: auto;
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.form-text {
+  color: var(--muted);
+}
+
+.privacy-note {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.tips-box,
+.preview-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+
+/* ---------- Validation (js/validation.js — Issue #20) ---------- */
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: var(--danger);
+  background-color: var(--danger-soft);
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.error-summary {
+  background: var(--danger-soft);
+  border: 1px solid #fecaca;
+  border-left: 4px solid var(--danger);
+  color: #7f1d1d;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.error-summary ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.success-note {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: var(--success);
+  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+}
+
+@media (max-width: 767.98px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Print / reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
