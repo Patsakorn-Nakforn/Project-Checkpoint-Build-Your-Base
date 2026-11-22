@@ -142,7 +142,7 @@ if (
 
       const buttons = createElement(
         "div",
-        "d-flex gap-2 mt-auto"
+        "d-flex flex-wrap gap-2 mt-auto"
       );
 
       const viewLink = createElement(
@@ -163,7 +163,17 @@ if (
       addLink.href =
         "add-item.html?id=" + encodeURIComponent(portfolio.id);
 
-      buttons.append(viewLink, addLink);
+      const downloadBtn = createElement(
+        "button",
+        "btn btn-outline-secondary flex-fill",
+        "Download Portfolio"
+      );
+      downloadBtn.type = "button";
+      downloadBtn.addEventListener("click", () => {
+        if (typeof DataItem !== "undefined") DataItem.downloadPortfolio(portfolio.id);
+      });
+
+      buttons.append(viewLink, addLink, downloadBtn);
 
       card.append(
         name,
