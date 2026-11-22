@@ -1,20 +1,62 @@
-/* =========================================================
- * member-data.js — Portfolio of every team member (Group 20)
- * Owner: M3
- *
- * DO NOT EDIT BY HAND: edit data/member-portfolio.json, then run
- *   node scripts/build-member-data.js
- *
- * Every time a page loads, any member portfolio that is missing from
- * localStorage is added (matched by id m001–m007). Portfolios that
- * already exist are never overwritten, so items a member adds stay
- * in that member's own portfolio.
- * Member ids start with "m" so they never clash with portfolios made
- * on the Create Portfolio page (p001, p002, ...).
- * Needs js/storage.js to be loaded first.
- * ========================================================= */
 (function () {
-  const MEMBER_DATA = /*__MEMBER_DATA__*/[];
+  const MEMBER_DATA = [
+  {
+    "id": "m001",
+    "name": "Tanatepon Kongprawet",
+    "enjoy": "To be updated",
+    "tried": "CS100 Power Up! group project, Website Detective challenge",
+    "curious": "To be updated",
+    "items": []
+  },
+  {
+    "id": "m002",
+    "name": "Kittapat Ongmee",
+    "enjoy": "To be updated",
+    "tried": "CS100 Power Up! group project, Website Detective challenge",
+    "curious": "To be updated",
+    "items": []
+  },
+  {
+    "id": "m003",
+    "name": "Praphawit Tipaksondecha",
+    "enjoy": "To be updated",
+    "tried": "CS100 Power Up! group project, Website Detective challenge",
+    "curious": "To be updated",
+    "items": []
+  },
+  {
+    "id": "m004",
+    "name": "Thitiphat Sukkhang",
+    "enjoy": "To be updated",
+    "tried": "CS100 Power Up! group project, Website Detective challenge",
+    "curious": "To be updated",
+    "items": []
+  },
+  {
+    "id": "m005",
+    "name": "Patsakorn Nakforn",
+    "enjoy": "To be updated",
+    "tried": "CS100 Power Up! group project, Website Detective challenge",
+    "curious": "To be updated",
+    "items": []
+  },
+  {
+    "id": "m006",
+    "name": "Techit Yookoom",
+    "enjoy": "To be updated",
+    "tried": "CS100 Power Up! group project, Website Detective challenge",
+    "curious": "To be updated",
+    "items": []
+  },
+  {
+    "id": "m007",
+    "name": "Natdanai Kamonklang",
+    "enjoy": "To be updated",
+    "tried": "CS100 Power Up! group project, Website Detective challenge",
+    "curious": "To be updated",
+    "items": []
+  }
+];
 
   window.MEMBER_DATA = MEMBER_DATA;
 
@@ -30,6 +72,6 @@
     .map((m) => JSON.parse(JSON.stringify(m)));
 
   if (missing.length > 0) {
-    Storage.saveAll(missing.concat(portfolios)); // members first on the Home page
+    Storage.saveAll(missing.concat(portfolios)); 
   }
 })();
