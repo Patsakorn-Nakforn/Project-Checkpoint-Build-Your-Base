@@ -80,10 +80,56 @@ document.addEventListener('DOMContentLoaded', () => {
       Array.isArray(i.evidence) && i.evidence.every(isLink);
   }
 
-  function validate(p) {
+  function validatePortfolio(p) {
     return !!p && typeof p === 'object' &&
       isStr(p.id) && isStr(p.name) &&
       Array.isArray(p.items) && p.items.every(validateItem);
+  }
+
+  const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+  const hasText = value => isStr(value) && value.trim() !== '';
+
+  function validateStandaloneItem(item) {
+    if (!isObject(item) || 'portfolio' in item || 'items' in item) return false;
+    if (!['title', 'type', 'role', 'description'].every(key => hasText(item[key]))) return false;
+    if ('id' in item && !hasText(item.id)) return false;
+
+    // วันที่ในไฟล์อาจเป็นวันจัดกิจกรรมในอนาคต
+    if (!isStr(item.date) || !/^\d{4}-\d{2}-\d{2}$/.test(item.date)) return false;
+    const date = new Date(item.date);
+    if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== item.date) return false;
+
+    if (!Array.isArray(item.skills) || !item.skills.length || !item.skills.every(hasText)) return false;
+    if (!isObject(item.reflection) ||
+        !['whatIDid', 'whatILearned'].every(key => hasText(item.reflection[key])) ||
+        !['challenge', 'nextStep'].every(key => !(key in item.reflection) || isStr(item.reflection[key]))) {
+      return false;
+    }
+
+    return Array.isArray(item.evidence) && item.evidence.length >= 1 && item.evidence.length <= 3 &&
+      item.evidence.every(url => isLink(url) && URL.canParse(url));
+  }
+
+  function importStandaloneItem(item) {
+    const list = Storage.loadAll();
+    const requestedId = new URLSearchParams(location.search).get('id');
+    const portfolioId = requestedId || Storage.getCurrentId() || list[0]?.id;
+    const portfolio = list.find(p => p.id === portfolioId);
+    if (!portfolio) throw new Error('ไม่พบ Portfolio ที่กำลังเปิด');
+
+    const [evidence1, evidence2, evidence3] = item.evidence;
+    const { title, type, date, role, description, skills, reflection } = item;
+    const { whatIDid, whatILearned, challenge, nextStep } = reflection;
+    const saved = Storage.addItem(portfolio.id, {
+      title, type, date, role, description, skills,
+      whatIDid, whatILearned, challenge, nextStep,
+      evidence1, evidence2, evidence3
+    });
+    if (!saved) throw new Error('บันทึกไม่สำเร็จ');
+
+    showMsg('Import สำเร็จ: ' + saved.title);
+    if (typeof renderPortfolio === 'function') renderPortfolio();
+    else location.reload();
   }
 
   on('file-import', 'change', e => {
@@ -95,7 +141,11 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const data = JSON.parse(reader.result);
         const p = data && data.portfolio ? data.portfolio : data;
-        if (!validate(p)) throw new Error('โครงสร้างไฟล์ไม่ถูกต้อง');
+        if (!validatePortfolio(p)) {
+          if (!validateStandaloneItem(data)) throw new Error('โครงสร้างไฟล์ไม่ถูกต้อง');
+          importStandaloneItem(data);
+          return;
+        }
 
         const list = Storage.loadAll();
 
