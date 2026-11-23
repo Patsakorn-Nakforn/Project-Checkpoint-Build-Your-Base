@@ -17,14 +17,22 @@ function field($key) {
     return is_string($v) ? trim($v) : '';
 }
 
+// นับจำนวนตัวอักษร (ใช้ได้แม้ไม่ได้เปิด mbstring)
+function textLength($s) {
+    if (function_exists('mb_strlen')) return mb_strlen($s);
+    $n = preg_match_all('/./us', $s);
+    return $n === false ? strlen($s) : $n;
+}
+
 function isValidDate($s) {
     $d = DateTime::createFromFormat('Y-m-d', $s);
     return $d && $d->format('Y-m-d') === $s;   // กันวันที่ที่ไม่มีจริง เช่น 2026-02-31
 }
 
 function isValidUrl($s) {
-    return preg_match('/^https?:\/\/\S+$/', $s) === 1
-        && filter_var($s, FILTER_VALIDATE_URL) !== false;
+    if (preg_match('#^https?://#i', $s) !== 1) return false;
+    $host = parse_url($s, PHP_URL_HOST) ?: '';
+    return preg_match('/^([a-z0-9-]+\.)+[a-z]{2,63}$/i', $host) === 1;
 }
 
 // รับเฉพาะ POST
@@ -49,6 +57,10 @@ foreach ($required as $key => $label) {
         $errors[$key] = 'กรุณากรอก' . $label;
     }
 }
+// title ไม่เกิน 60 ตัวอักษร (เท่ากับ api/items.php)
+if (!isset($errors['title']) && textLength(field('title')) > 60) {
+    $errors['title'] = 'ชื่อผลงานต้องไม่เกิน 60 ตัวอักษร';
+}
 
 // 2) วันที่ (อนุญาตวันในอนาคต เพราะอาจเป็นวันจัดกิจกรรม)
 if (field('date') === '') {
@@ -70,7 +82,7 @@ foreach (['evidence1', 'evidence2', 'evidence3'] as $key) {
     $url = field($key);
     if ($url === '') continue;
     if (!isValidUrl($url)) {
-        $errors[$key] = 'ลิงก์ต้องขึ้นต้นด้วย http:// หรือ https://';
+        $errors[$key] = 'ลิงก์ไม่ถูกต้อง ต้องขึ้นต้นด้วย http:// หรือ https:// และมีโดเมน เช่น https://example.com';
         $evidenceBad = true;
     } else {
         $evidence[] = $url;

@@ -16,7 +16,15 @@ if (form && result) {
                 method: 'POST',
                 body: new FormData(form)                          // เก็บทุกช่องที่มี name
             });
-            const data = await response.json();
+            const text = await response.text();
+            let data;
+            try {
+                data = JSON.parse(text);
+            } catch (e) {
+                result.className = 'mt-3 alert alert-danger';
+                result.textContent = 'เซิร์ฟเวอร์ตอบกลับไม่ใช่ JSON:\n' + text.slice(0, 500);
+                return;
+            }
 
             if (!data.ok) {                                       // ตรวจไม่ผ่าน
                 result.className = 'mt-3 alert alert-danger';
