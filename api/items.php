@@ -3,14 +3,24 @@ require 'storage.php';
 
 requireMethod(['GET', 'POST']);
 
+// GET api/items.php                  -> the Items of EVERY Portfolio, grouped by Portfolio
 // GET api/items.php?portfolioId=p001 -> all Items of ONE Portfolio
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $portfolios = readPortfolios();
     $portfolioId = $_GET['portfolioId'] ?? '';
+
     if ($portfolioId === '') {
-        sendJson(['error' => 'portfolioId is required'], 400);
+        $all = [];
+        foreach ($portfolios as $portfolio) {
+            $all[] = [
+                'portfolioId'   => $portfolio['id'] ?? '',
+                'portfolioName' => $portfolio['name'] ?? '',
+                'items'         => $portfolio['items'] ?? [],
+            ];
+        }
+        sendJson($all);
     }
 
-    $portfolios = readPortfolios();
     $p = findPortfolioIndex($portfolios, $portfolioId);
     if ($p === -1) {
         sendJson(['error' => 'Portfolio not found'], 404);
