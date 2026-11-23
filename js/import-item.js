@@ -19,6 +19,7 @@
 
   // ---------- แสดงข้อความ (ใช้ textContent ทุกที่) ----------
   function showMessage(type, lines) {
+    
     messageBox.replaceChildren();
     const box = document.createElement("div");
     box.className = "alert alert-" + type;
@@ -36,6 +37,7 @@
       box.appendChild(ul);
     }
     messageBox.appendChild(box);
+    messageBox.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function clearMessage() {
@@ -79,6 +81,9 @@
         errors.push('ต้องมี "' + key + '" เป็นข้อความที่ไม่ว่าง');
       }
     });
+    if (isNonEmptyString(data.title) && data.title.trim().length > 60) {
+      errors.push('"title" ต้องมีความยาวไม่เกิน 60 ตัวอักษร');
+      }
 
     if (isNonEmptyString(data.date) && !isValidDate(data.date.trim())) {
       errors.push('"date" ต้องเป็นรูปแบบ YYYY-MM-DD และเป็นวันที่จริง เช่น 2026-11-24');
@@ -146,7 +151,7 @@
     const keep = select.value;
     select.replaceChildren(new Option("-- เลือก Portfolio --", ""));
     portfolios.forEach(function (p) {
-      select.add(new Option(p.displayName || p.id, p.id));
+      select.add(new Option(p.displayName || p.name || p.id, p.id));
     });
     if (keep) select.value = keep;
 
@@ -251,10 +256,10 @@
     showPreview(currentItem);
 
     const notes = ["JSON ถูกต้อง กรุณาเลือก Portfolio ตรวจและแก้ Reflection แล้วกดบันทึก"];
-    if (currentItem.evidence.length > 1) {
-      notes.push("หมายเหตุ: ตอนนี้ Server เก็บหลักฐานได้ 1 ลิงก์ จะบันทึกเฉพาะลิงก์แรก");
+    if (currentItem.evidence.length > 3) {
+      notes.push("หมายเหตุ: Server เก็บหลักฐานได้สูงสุด 3 ลิงก์ จะบันทึกเฉพาะ 3 ลิงก์แรก");
     }
-    showMessage(currentItem.evidence.length > 1 ? "warning" : "success", notes);
+    showMessage(currentItem.evidence.length > 3 ? "warning" : "success", notes);
   });
 
   // ---------- บันทึกลง server ----------
@@ -296,24 +301,30 @@
         return;
       }
 
-      const body = new FormData();
-      body.append("portfolioId", portfolioId);
-      body.append("title", currentItem.title);
-      body.append("type", currentItem.type);
-      body.append("date", currentItem.date);
-      body.append("role", currentItem.role);
-      body.append("description", currentItem.description);
-      body.append("skills", currentItem.skills.join(", "));
-      REF_FIELDS.forEach(function (key) {
-        body.append(key, reflection[key]);
-      });
-      body.append("evidence", currentItem.evidence[0]);
+      const payload = {
+        portfolioId: portfolioId,
+        title: currentItem.title,
+        type: currentItem.type,
+        date: currentItem.date,
+        role: currentItem.role,
+        description: currentItem.description,
+        skills: currentItem.skills,
+        reflection: reflection,
+        evidence: currentItem.evidence.slice(0, 3),
+      };
 
-      const res = await fetch(API_ITEMS, { method: "POST", body: body });
+      const res = await fetch(API_ITEMS, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
       const result = await res.json();
 
       if (!res.ok) {
-        showMessage("danger", ["บันทึกไม่สำเร็จ: " + (result.error || "HTTP " + res.status)]);
+        const lines = result.errors
+          ? Object.values(result.errors).map(String)
+          : [result.error || "HTTP " + res.status];
+        showMessage("danger", ["บันทึกไม่สำเร็จ:"].concat(lines));
         return;
       }
 
