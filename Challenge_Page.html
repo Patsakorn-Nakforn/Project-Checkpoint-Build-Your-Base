@@ -103,6 +103,71 @@
       </section>
       <!-- ===== จบ Hero ===== -->
 
+      <!-- ===== Challenge Form (ส่งไป php_form/challenge-item.php) ===== -->
+      <section id="challenge-form-section" class="mt-5">
+        <h2 class="h4">บันทึกผล Challenge</h2>
+        <form id="challenge-form" class="row g-3" novalidate>
+          <div class="col-12 col-md-6">
+            <label for="title" class="form-label">ชื่อผลงาน</label>
+            <input type="text" id="title" name="title" class="form-control" required />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="type" class="form-label">ประเภท</label>
+            <input type="text" id="type" name="type" class="form-control" value="Challenge" required />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="date" class="form-label">วันที่</label>
+            <input type="date" id="date" name="date" class="form-control" required />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="role" class="form-label">บทบาท</label>
+            <input type="text" id="role" name="role" class="form-control" required />
+          </div>
+          <div class="col-12">
+            <label for="description" class="form-label">รายละเอียด</label>
+            <textarea id="description" name="description" rows="2" class="form-control" required></textarea>
+          </div>
+          <div class="col-12">
+            <label for="skills" class="form-label">ทักษะ (คั่นด้วย ,)</label>
+            <input type="text" id="skills" name="skills" class="form-control" placeholder="discover, layout" required />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="whatIDid" class="form-label">สิ่งที่ฉันทำ</label>
+            <textarea id="whatIDid" name="whatIDid" rows="2" class="form-control" required></textarea>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="whatILearned" class="form-label">สิ่งที่ฉันได้เรียนรู้</label>
+            <textarea id="whatILearned" name="whatILearned" rows="2" class="form-control" required></textarea>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="challenge" class="form-label">ความท้าทาย (ไม่บังคับ)</label>
+            <textarea id="challenge" name="challenge" rows="2" class="form-control"></textarea>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="nextStep" class="form-label">ก้าวต่อไป (ไม่บังคับ)</label>
+            <textarea id="nextStep" name="nextStep" rows="2" class="form-control"></textarea>
+          </div>
+          <div class="col-12">
+            <label for="evidence1" class="form-label">ลิงก์หลักฐาน 1</label>
+            <input type="url" id="evidence1" name="evidence1" class="form-control" required />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="evidence2" class="form-label">ลิงก์หลักฐาน 2 (ไม่บังคับ)</label>
+            <input type="url" id="evidence2" name="evidence2" class="form-control" />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="evidence3" class="form-label">ลิงก์หลักฐาน 3 (ไม่บังคับ)</label>
+            <input type="url" id="evidence3" name="evidence3" class="form-control" />
+          </div>
+          <div class="col-12 d-flex flex-wrap gap-2">
+            <button type="submit" class="btn btn-primary">สร้าง Challenge Item</button>
+            <button type="button" id="btn-download-item" class="btn btn-outline-primary" disabled>Download Challenge Item</button>
+          </div>
+        </form>
+        <pre id="challenge-result" class="mt-3" style="white-space: pre-wrap;"></pre>
+      </section>
+      <!-- ===== จบ Challenge Form ===== -->
+
     </main>
 
     <!-- FOOTER -->
@@ -115,5 +180,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="php_form/challenge-form.js"></script>
   </body>
 </html>
