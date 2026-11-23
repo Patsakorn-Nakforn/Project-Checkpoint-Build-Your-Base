@@ -41,22 +41,44 @@ function lockData() {
     }
 }
 
-// Read all Portfolios from the JSON file (empty list if no file yet)
+// Group members (m001..m007) live in data/member-portfolio.json.
+// They are added to the server data when missing, so every page that reads
+// the Portfolios (e.g. the Import Item select) can list the group members.
+function addGroupMembers($portfolios) {
+    $file = __DIR__ . '/../data/member-portfolio.json';
+    if (!is_file($file)) {
+        return $portfolios;
+    }
+    $members = json_decode((string) file_get_contents($file), true);
+    if (!is_array($members)) {
+        return $portfolios;
+    }
+    $existing = array_column($portfolios, 'id');
+    $missing = [];
+    foreach ($members as $m) {
+        if (is_array($m) && isset($m['id']) && !in_array($m['id'], $existing, true)) {
+            $missing[] = $m;
+        }
+    }
+    return array_merge($missing, $portfolios);   // members first, like js/member-data.js
+}
+
+// Read all Portfolios from the JSON file (group members are always included)
 function readPortfolios() {
     lockData();
     if (!file_exists(DATA_FILE)) {
-        return [];
+        return addGroupMembers([]);
     }
     $raw = file_get_contents(DATA_FILE);
     if (trim((string) $raw) === '') {
-        return [];
+        return addGroupMembers([]);
     }
     $data = json_decode($raw, true);
     // Never treat a broken file as "empty": the next write would erase every Portfolio.
     if (!is_array($data)) {
         sendJson(['error' => 'Data file is not valid JSON, refusing to overwrite it: ' . DATA_FILE], 500);
     }
-    return $data;
+    return addGroupMembers($data);
 }
 
 // Write all Portfolios back to the JSON file

@@ -149,10 +149,19 @@
     }
 
     const keep = select.value;
-    select.replaceChildren(new Option("-- เลือก Portfolio --", ""));
+    select.replaceChildren(new Option("-- เลือกสมาชิก / Portfolio --", ""));
+
+    // สมาชิกในกลุ่มมี id รูปแบบ m001, m002 ... ส่วน Portfolio ที่สร้างเองเป็น p001, ...
+    const memberGroup = document.createElement("optgroup");
+    memberGroup.label = "สมาชิกในกลุ่ม";
+    const otherGroup = document.createElement("optgroup");
+    otherGroup.label = "Portfolio อื่น ๆ";
     portfolios.forEach(function (p) {
-      select.add(new Option(p.displayName || p.name || p.id, p.id));
+      const option = new Option(p.displayName || p.name || p.id, p.id);
+      (/^m\d+$/.test(p.id) ? memberGroup : otherGroup).appendChild(option);
     });
+    if (memberGroup.children.length > 0) select.appendChild(memberGroup);
+    if (otherGroup.children.length > 0) select.appendChild(otherGroup);
     if (keep) select.value = keep;
 
     if (portfolios.length === 0) {
