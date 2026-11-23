@@ -38,7 +38,7 @@ $name = textValue($data, 'name') !== '' ? textValue($data, 'name') : textValue($
 if ($name === '') {
     sendJson(['error' => 'Display name is required'], 400);
 }
-if (mb_strlen($name) > 60) {
+if (textLength($name) > 60) {
     sendJson(['error' => 'Display name must be 60 characters or fewer'], 400);
 }
 

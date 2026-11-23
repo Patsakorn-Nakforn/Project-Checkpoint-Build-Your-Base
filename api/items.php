@@ -101,7 +101,7 @@ function buildItem($in) {
             $errors[$key] = "$key is required.";
         }
     }
-    if (!isset($errors['title']) && mb_strlen($item['title']) > 60) {
+    if (!isset($errors['title']) && textLength($item['title']) > 60) {
         $errors['title'] = 'title must be 60 characters or fewer.';
     }
 

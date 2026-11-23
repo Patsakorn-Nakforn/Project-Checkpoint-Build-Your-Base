@@ -136,6 +136,15 @@ function requireMethod($allowed) {
     }
 }
 
+// Length in characters. Works even when the PHP "mbstring" extension is not enabled
+// (common on Windows), where mb_strlen() would crash with a fatal error.
+function textLength($text) {
+    if (function_exists('mb_strlen')) {
+        return mb_strlen($text);
+    }
+    return preg_match_all('/./us', $text) ?: strlen($text);
+}
+
 // A value from the request as trimmed text ('' if missing or not text)
 function textValue($data, $key) {
     $v = $data[$key] ?? '';
