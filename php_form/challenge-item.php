@@ -57,10 +57,6 @@ foreach ($required as $key => $label) {
         $errors[$key] = 'กรุณากรอก' . $label;
     }
 }
-// title ไม่เกิน 60 ตัวอักษร (เท่ากับ api/items.php)
-if (!isset($errors['title']) && textLength(field('title')) > 60) {
-    $errors['title'] = 'ชื่อผลงานต้องไม่เกิน 60 ตัวอักษร';
-}
 
 // 2) วันที่ (อนุญาตวันในอนาคต เพราะอาจเป็นวันจัดกิจกรรม)
 if (field('date') === '') {

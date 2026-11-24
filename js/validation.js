@@ -130,12 +130,6 @@ function validateItem(form) {
         }
     });
 
-    //ตรวจสอบความยาวชื่อ
-    const title = form.querySelector('#title');
-
-    if (title.value.trim().length > 60) {
-        errors.title = 'ชื่อผลงานต้องมีความยาวไม่เกิน 60 ตัวอักษร';
-    }
 
 
     // ตรวจสอบทักษะ
