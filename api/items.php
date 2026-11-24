@@ -111,9 +111,6 @@ function buildItem($in) {
             $errors[$key] = "$key is required.";
         }
     }
-    if (!isset($errors['title']) && textLength($item['title']) > 60) {
-        $errors['title'] = 'title must be 60 characters or fewer.';
-    }
 
     // YYYY-MM-DD and a real calendar date. A future date is allowed:
     // an Item can describe an activity that is scheduled later (e.g. the Challenge).
