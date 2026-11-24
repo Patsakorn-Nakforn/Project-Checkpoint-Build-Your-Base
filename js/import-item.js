@@ -169,6 +169,46 @@
     }
   }
 
+  // ---------- คัดลอก item ที่เพิ่งบันทึก ไปไว้ใน localStorage ----------
+  // หน้า Home / View Portfolio อ่านข้อมูลจาก localStorage ของเบราว์เซอร์ (js/storage.js)
+  // ไม่ได้อ่านจาก server จึงต้องใส่ item ที่ server เพิ่งบันทึกลงไปด้วย จะได้แสดงในหน้า View Portfolio
+  const LOCAL_PORTFOLIOS_KEY = "powerup.portfolios";
+  const LOCAL_CURRENT_ID_KEY = "powerup.currentId";
+
+  function mirrorToLocal(portfolioId, item) {
+    try {
+      let all = JSON.parse(localStorage.getItem(LOCAL_PORTFOLIOS_KEY) || "[]");
+      if (!Array.isArray(all)) all = [];
+
+      let target = all.find(function (p) { return p.id === portfolioId; });
+      if (!target) {
+        // Portfolio นี้ยังไม่มีในเบราว์เซอร์ -> สร้างจากข้อมูลบน server
+        const src = portfolios.find(function (p) { return p.id === portfolioId; });
+        if (!src) return false;
+        target = JSON.parse(JSON.stringify(src));
+        target.name = target.name || target.displayName || "";
+        target.items = [];
+        all.push(target);
+      }
+      if (!Array.isArray(target.items)) target.items = [];
+
+      const copy = JSON.parse(JSON.stringify(item));
+      const used = target.items.map(function (i) { return i.id; });
+      if (!copy.id || used.indexOf(copy.id) !== -1) {
+        let n = 1;
+        while (used.indexOf("item" + String(n).padStart(3, "0")) !== -1) n++;
+        copy.id = "item" + String(n).padStart(3, "0");
+      }
+      target.items.push(copy);
+
+      localStorage.setItem(LOCAL_PORTFOLIOS_KEY, JSON.stringify(all));
+      localStorage.setItem(LOCAL_CURRENT_ID_KEY, portfolioId);   // ให้ View Portfolio เปิด Portfolio นี้
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   // ---------- ตัวอย่างก่อนบันทึก ----------
   function addRow(label, value) {
     const row = document.createElement("div");
@@ -337,7 +377,11 @@
         return;
       }
 
-      showMessage("success", ['บันทึกสำเร็จ: "' + result.title + '" ถูกเพิ่มใน Portfolio แล้ว']);
+      const shown = mirrorToLocal(portfolioId, result);
+      showMessage("success", [
+        'บันทึกสำเร็จ: "' + result.title + '" ถูกเพิ่มใน Portfolio แล้ว' +
+          (shown ? " (ดูได้ที่หน้า View Portfolio)" : ""),
+      ]);
       jsonBox.value = "";
       fileInput.value = "";
       resetPreview();
